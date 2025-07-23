@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 export default function Home() {
   const router = useRouter()
@@ -65,12 +66,15 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center items-center">
-            <img
-              src={images[index]}
-              alt={`Persona ${index + 1}`}
-              onClick={handleClick}
-              className="rounded-3xl w-[260px] sm:w-[300px] lg:w-[320px] hover:scale-105 transition-transform duration-300 cursor-pointer"
-            />
+            <Image
+  src={`/${images[index]}`}
+  alt={`Persona ${index + 1}`}
+  onClick={handleClick}
+  width={300}
+  height={400}
+  className="rounded-3xl w-[260px] sm:w-[300px] lg:w-[320px] hover:scale-105 transition-transform duration-300 cursor-pointer"
+/>
+
           </div>
         </motion.section>
 
@@ -83,12 +87,15 @@ export default function Home() {
           className="min-h-screen bg-[#e9c0e9] grid grid-cols-1 md:grid-cols-2 px-6 md:px-16 py-20 gap-10"
         >
           <div className="flex justify-center items-center">
-            <img
-              src={images[change]}
-              alt={`Persona ${change + 1}`}
-              onClick={handleChange}
-              className="rounded-3xl w-[260px] sm:w-[300px] lg:w-[320px] hover:scale-105 transition-transform duration-300 cursor-pointer"
-            />
+            <Image
+  src={`/${images[change]}`}
+  alt={`Persona ${change + 1}`}
+  onClick={handleChange}
+  width={300}
+  height={400}
+  className="rounded-3xl w-[260px] sm:w-[300px] lg:w-[320px] hover:scale-105 transition-transform duration-300 cursor-pointer"
+/>
+
           </div>
           <div className="flex flex-col justify-center items-start">
             <h1 className="text-[#502274] text-[36px] sm:text-[48px] md:text-[64px] lg:text-[80px] font-extrabold leading-tight mb-4">

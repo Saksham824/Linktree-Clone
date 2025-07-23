@@ -4,6 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import { motion } from 'framer-motion';
 import "react-toastify/dist/ReactToastify.css";
 import { useSearchParams, useRouter } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ChooseUsernamePage() {
   const router = useRouter();
@@ -195,7 +197,7 @@ export default function ChooseUsernamePage() {
 
             <p className="text-sm text-gray-600 text-center">
               Already have an account?{" "}
-              <a href="/" className="text-purple-600 underline hover:text-purple-800">Go back to login</a>
+              <Link href="/" className="text-purple-600 underline hover:text-purple-800">Go back to login</Link>
             </p>
           </motion.div>
         </motion.div>
@@ -214,21 +216,27 @@ export default function ChooseUsernamePage() {
           >
             <div className="hidden lg:block">
               <div className="rounded-2xl overflow-hidden shadow-xl bg-white w-full max-w-sm mx-auto">
-                <img
-                  src="https://linktr.ee/auth/userinfo/_next/static/media/banner-register-desktop.52a3a6d2.png"
-                  alt="Preview"
-                  className="w-full h-auto object-cover"
-                />
+                <Image
+  src="https://linktr.ee/auth/userinfo/_next/static/media/banner-register-desktop.52a3a6d2.png"
+  alt="Preview"
+  width={400}
+  height={250}
+  className="w-full h-auto object-cover"
+/>
+
               </div>
             </div>
 
             <div className="block lg:hidden">
               <div className="bg-purple-700 p-6 rounded-3xl shadow-lg mx-auto w-full max-w-sm">
-                <img
-                  src="https://i.pravatar.cc/100?img=60"
-                  className="w-16 h-16 rounded-full mx-auto mb-2"
-                  alt="Avatar"
-                />
+                <Image
+  src="https://i.pravatar.cc/100?Image=60"
+  alt="Avatar"
+  width={64}
+  height={64}
+  className="w-16 h-16 rounded-full mx-auto mb-2"
+/>
+
                 <h3 className="text-lg font-semibold text-white">Super Wintendo</h3>
                 <p className="text-sm text-purple-300">Streaming every Tuesday</p>
                 <div className="mt-4 space-y-2">

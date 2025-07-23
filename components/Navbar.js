@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import clsx from 'clsx';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Navbar = () => {
   const router = useRouter();
@@ -35,19 +37,22 @@ const Navbar = () => {
       <div className="flex justify-between items-center px-6 py-5">
         {/* Logo and Links */}
         <div className="flex items-center gap-8">
-          <img className="h-6" src="linktree.png" alt="logo" />
+          <div className="relative w-[120px] h-[30px]">
+  <Image src="/linktree.png" alt="logo" fill className="object-contain" />
+</div>
+
 
           {/* Desktop Links */}
           <div className="hidden md:flex gap-6">
             {links.map(link => (
-              <a
+              <Link
                 key={link}
                 href={`/${link.toLowerCase()}`}
                 className="text-gray-600 text-sm font-medium hover:text-green-500 relative group"
               >
                 {link}
                 <span className="block h-0.5 max-w-0 group-hover:max-w-full bg-green-500 transition-all duration-300"></span>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -79,13 +84,13 @@ const Navbar = () => {
       >
         <div className="flex flex-col items-center gap-4 px-6 py-4">
           {links.map(link => (
-            <a
+            <Link
               key={link}
               href={`/${link.toLowerCase()}`}
               className="text-gray-700 text-base font-medium hover:text-green-500"
             >
               {link}
-            </a>
+            </Link>
           ))}
           <button className="w-full bg-[#eff0ec] font-semibold rounded-md px-6 py-2 hover:bg-[#ebe9e9] text-sm">
             Log in
