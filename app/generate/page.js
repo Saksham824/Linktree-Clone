@@ -32,43 +32,48 @@ export default function ChooseUsernamePage() {
   };
 
   const submitAllLinks = async () => {
-    let success = false;
+  let success = false;
 
-    for (let i = 0; i < links.length; i++) {
-      const { link, text } = links[i];
-      if (link && text && handle) {
-        const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
+  for (let i = 0; i < links.length; i++) {
+    const { link, text } = links[i];
+    if (link && text && handle) {
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
 
-        const body = JSON.stringify({
-          links: link,
-          linktext: text,
-          handle,
-          image: pic,
-          bio: bio
-        });
+      const body = JSON.stringify({
+        links: link,
+        linktext: text,
+        handle,
+        image: pic,
+        bio: bio
+      });
 
-        const requestOptions = {
-          method: "POST",
-          headers: myHeaders,
-          body,
-          redirect: "follow"
-        };
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body,
+      };
 
-        const response = await fetch("http://localhost:3000/api/add", requestOptions);
+      try {
+        const response = await fetch("/api/add", requestOptions); // ✅ FIXED
         const result = await response.json();
 
         if (result.success) {
           success = true;
         } else {
-          toast.error(result.message);
+          toast.error(result.message || "Something went wrong!");
         }
+      } catch (err) {
+        toast.error("Failed to connect to server");
+        console.error(err);
       }
     }
+  }
 
-    setLinks([{ link: "", text: "" }]);
-    return success;
-  };
+  setLinks([{ link: "", text: "" }]);
+  return success;
+};
+
 
   const handleCreateLinktree = async () => {
     if (!handle) {
@@ -217,10 +222,10 @@ export default function ChooseUsernamePage() {
             <div className="hidden lg:block">
               <div className="rounded-2xl overflow-hidden shadow-xl bg-white w-full max-w-sm mx-auto">
                 <Image
-  src="https://linktr.ee/auth/userinfo/_next/static/media/banner-register-desktop.52a3a6d2.png"
+  src="https://marketplace.canva.com/EAFE1wy_S2U/2/0/450w/canva-5FzODo5SHPU.jpg"
   alt="Preview"
   width={400}
-  height={250}
+  height={400}
   className="w-full h-auto object-cover"
 />
 
