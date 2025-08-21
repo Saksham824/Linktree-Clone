@@ -72,7 +72,7 @@ export default function Footer() {
               <li>The Linktree Blog</li>
               <li>Engineering Blog</li>
               <li>Marketplace</li>
-              <li>What's New</li>
+              <li>What&apos;s New</li>
               <li>About</li>
               <li>Press</li>
               <li>Careers</li>
@@ -90,7 +90,7 @@ export default function Footer() {
               <li>2023 Creator Report</li>
               <li>2022 Creator Report</li>
               <li>Charities</li>
-              <li>What's Trending</li>
+              <li>What&apos;s Trending</li>
               <li>Creator Profile Directory</li>
               <li>Explore Templates</li>
             </ul>
@@ -190,7 +190,7 @@ export default function Footer() {
         We acknowledge the Traditional Custodians of the land on which our office
         stands, The Wurundjeri people of the Kulin Nation, and pay our respects
         to Elders past, present and emerging. Linktree Pty Ltd (ABN 68 608 721
-        562), 1–9 Sackville St, Collingwood VIC 3066
+        562), 1&ndash;9 Sackville St, Collingwood VIC 3066
       </p>
     </div>
   );
