@@ -1,11 +1,13 @@
 'use client';
-import React, { Suspense, useState } from 'react';
+import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { motion } from 'framer-motion';
 import "react-toastify/dist/ReactToastify.css";
 import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+
+export const dynamic = "force-dynamic";
 
 export default function ChooseUsernamePage() {
   const router = useRouter();
@@ -91,8 +93,7 @@ export default function ChooseUsernamePage() {
 
   return (
     <>
-      <Suspense >
-        <div className="min-h-screen flex flex-col md:flex-row">
+      <div className="min-h-screen flex flex-col md:flex-row">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -261,7 +262,6 @@ export default function ChooseUsernamePage() {
           </motion.div>
         </motion.div>
       </div>
-      </Suspense>
     </>
   );
 }
