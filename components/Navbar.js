@@ -23,7 +23,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const route =()=>{
+  const route = () => {
     router.push('/generate')
   }
 
@@ -37,9 +37,9 @@ const Navbar = () => {
       <div className="flex justify-between items-center px-6 py-5">
         {/* Logo and Links */}
         <div className="flex items-center gap-8">
-          <div className="relative w-[120px] h-[30px]">
-  <Image src="/linktree.png" alt="logo" fill className="object-contain" />
-</div>
+          <Link href={'/'} className="relative w-[120px] h-[30px]">
+            <Image src="/linktree.png" alt="logo" fill className="object-contain" />
+          </Link>
 
 
           {/* Desktop Links */}

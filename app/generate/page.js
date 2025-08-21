@@ -55,7 +55,7 @@ export default function ChooseUsernamePage() {
       };
 
       try {
-        const response = await fetch("/api/add", requestOptions); // ✅ FIXED
+        const response = await fetch("/api/add", requestOptions); 
         const result = await response.json();
 
         if (result.success) {

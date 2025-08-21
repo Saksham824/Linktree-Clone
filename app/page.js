@@ -10,8 +10,8 @@ export default function Home() {
   const router = useRouter()
   const images = ['person1.png', 'person3.png', 'person2.png', 'person4.png'];
   const [index, setIndex] = useState(0);
-  const [change,setChange] = useState(0)
-  const [text,setText] = useState("");
+  const [change, setChange] = useState(0)
+  const [text, setText] = useState("");
 
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
@@ -25,11 +25,11 @@ export default function Home() {
     setChange((prev) => (prev + 1) % images.length);
   };
 
-  const route =()=>{
+  const route = () => {
     router.push('/generate')
   }
 
-  const createTree=()=>{
+  const createTree = () => {
     router.push(`/generate?handle=${text}`)
   }
   return (
@@ -54,26 +54,26 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
               <input
-              value={text}
-              onChange={(e)=>setText(e.target.value)}
+                value={text}
+                onChange={(e) => setText(e.target.value)}
                 className="bg-white px-4 py-5 rounded-md w-full"
                 type="text"
                 placeholder="Enter your handle"
               />
-              <button onClick={()=>createTree()} className="bg-[#e9c0e9] w-full px-6 py-3 rounded-full font-semibold text-[#1e2330]">
+              <button onClick={() => createTree()} className="bg-[#e9c0e9] w-full px-6 py-3 rounded-full font-semibold text-[#1e2330]">
                 Claim your Linktree
               </button>
             </div>
           </div>
           <div className="flex justify-center items-center">
             <Image
-  src={`/${images[index]}`}
-  alt={`Persona ${index + 1}`}
-  onClick={handleClick}
-  width={300}
-  height={400}
-  className="rounded-3xl w-[260px] sm:w-[300px] lg:w-[320px] hover:scale-105 transition-transform duration-300 cursor-pointer"
-/>
+              src={`/${images[index]}`}
+              alt={`Persona ${index + 1}`}
+              onClick={handleClick}
+              width={300}
+              height={400}
+              className="rounded-3xl w-[260px] sm:w-[300px] lg:w-[320px] hover:scale-105 transition-transform duration-300 cursor-pointer"
+            />
 
           </div>
         </motion.section>
@@ -88,13 +88,13 @@ export default function Home() {
         >
           <div className="flex justify-center items-center">
             <Image
-  src={`/${images[change]}`}
-  alt={`Persona ${change + 1}`}
-  onClick={handleChange}
-  width={300}
-  height={400}
-  className="rounded-3xl w-[260px] sm:w-[300px] lg:w-[320px] hover:scale-105 transition-transform duration-300 cursor-pointer"
-/>
+              src={`/${images[change]}`}
+              alt={`Persona ${change + 1}`}
+              onClick={handleChange}
+              width={300}
+              height={400}
+              className="rounded-3xl w-[260px] sm:w-[300px] lg:w-[320px] hover:scale-105 transition-transform duration-300 cursor-pointer"
+            />
 
           </div>
           <div className="flex flex-col justify-center items-start">
@@ -110,7 +110,7 @@ export default function Home() {
           </div>
         </motion.section>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

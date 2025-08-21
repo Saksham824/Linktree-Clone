@@ -11,8 +11,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function Footer() {
-  const router =  useRouter();
-  const route =()=>{
+  const router = useRouter();
+  const route = () => {
     router.push('/generate')
   }
   return (
@@ -22,23 +22,23 @@ export default function Footer() {
         {/* Left Silhouette */}
         <div className="absolute left-0 top-0 h-full w-full max-w-[300px] sm:max-w-[500px]">
           <Image
-  src="/p1.svg"
-  alt="Silhouette"
-  width={300}
-  height={300}
-  className="h-full w-full absolute"
-/>
+            src="/p1.svg"
+            alt="Silhouette"
+            width={300}
+            height={300}
+            className="h-full w-full absolute"
+          />
 
         </div>
 
         {/* Right Flower */}
         <div className="absolute right-0 top-0 h-full w-full max-w-[200px] sm:max-w-[300px] hidden md:block">
           <Image
-  src="/flower.svg"
-  alt="Decorative Flower"
-  fill
-  className="object-contain"
-/>
+            src="/flower.svg"
+            alt="Decorative Flower"
+            fill
+            className="object-contain"
+          />
 
         </div>
 
@@ -168,20 +168,20 @@ export default function Footer() {
       {/* Flags */}
       <div className="flex justify-center gap-4 mt-10 mb-4 px-4">
         <Image
-  src="https://cdn.prod.website-files.com/666255f7f2126f4e8cec6f8f/666b44696cafd33dbf47aef3_Container.svg"
-  alt="Aboriginal Flag"
-  width={60}
-  height={40}
-  className="w-[50px] sm:w-[60px] h-auto"
-/>
+          src="https://cdn.prod.website-files.com/666255f7f2126f4e8cec6f8f/666b44696cafd33dbf47aef3_Container.svg"
+          alt="Aboriginal Flag"
+          width={60}
+          height={40}
+          className="w-[50px] sm:w-[60px] h-auto"
+        />
 
-<Image
-  src="https://cdn.prod.website-files.com/666255f7f2126f4e8cec6f8f/666b44694653c36473453f36_Container-1.svg"
-  alt="Torres Strait Flag"
-  width={60}
-  height={40}
-  className="w-[50px] sm:w-[60px] h-auto"
-/>
+        <Image
+          src="https://cdn.prod.website-files.com/666255f7f2126f4e8cec6f8f/666b44694653c36473453f36_Container-1.svg"
+          alt="Torres Strait Flag"
+          width={60}
+          height={40}
+          className="w-[50px] sm:w-[60px] h-auto"
+        />
 
       </div>
 
